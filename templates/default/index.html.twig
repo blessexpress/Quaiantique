@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href={{asset("css/accueil.css") }}>
+{% endblock %}
+
+{% block body %}
+
+    {% for message in app.flashes('success') %}
+        <div class="container alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% for message in app.flashes('danger') %}
+        <div class="container alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+
+    <div class="container-accueil">
+        <img class="imgA" src="{{ asset('assets/img/accueil.png') }}">
+        <div class="textA">
+            Le <br>
+            QUAI ANTIQUE <br>
+            Bienvenue à Quai Antique, où chaque bouchée raconte une histoire de l'océan.
+        </div>
+    </div>
+
+       <p class="introtext">SPÉCIALITÉ DE PLATS A BASE DE POISSON ÉXCLUSIVEMENT</p>
+
+
+    <div class="presentationcontainer">
+        <div class="plat1">
+            <img class="poulpe" src="{{ asset('assets/img/AdobeStock_628278586_Preview.jpeg') }}">
+        </div>
+        <div class="crabecontainer">
+            <img class="crabe" src="{{ asset('assets/img/AdobeStock_618497434_Preview.jpeg') }}">
+        </div>
+        <div class="homardcontainer">
+            <img class="homard" src="{{ asset('assets/img/AdobeStock_631237087_Preview.jpeg') }}">
+        </div>
+
+        <div class="textepoulpecontainer">
+            <p class="textpoulpe"> <span class="titrerestaurant">Notre Restaurant </span> <br> Plongez dans une expérience culinaire maritime chez QUAI ANTIQUE. <br>
+            Découvrez la fraîcheur de nos poissons et fruits de mer préparés <br> avec  expertise.
+            Notre menu, inspiré par les vagues de l'océan <br>, promet des saveurs délicates  et des moments inoubliables. <br>
+            Réservez votre table dès maintenant et laissez-nous vous  <br>cemmener en voyage au cœur de la mer.</p>
+        </div>
+    </div>
+    <iframe class="carteraftel" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5786.169959232193!2d5.412160469775392!3d43.5214206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12c98d6568505b33%3A0xdd296e185f9b7397!2sRAFTEL!5e0!3m2!1sfr!2sfr!4v1679843988950!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <form class="formulaire">
+        <div class="textformulaire">
+            <p>Contact Info <br> <br>
+                Le QUAI ANTIQUE <br> <br>
+                25 rue d'Hauteville 75010 Paris <br>
+                Tel: 0102030405 </p>
+
+            <label for="nom"></label>
+            <input type="text" id="nom" name="nom" placeholder="name"  required><br> <br>
+
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Email" required><br> <br>
+
+            <label for="Subject"></label>
+            <input type="text" id="subject" name="subject" placeholder="subject" required><br> <br>
+
+            <label for="message"></label>
+            <textarea id="message" name="message" placeholder="Message" required></textarea><br> <br>
+
+            <button  type="button">Send message</button>
+        </div>
+    </form>
+
+
+    <!-- Footer -->
+    <footer>
+        <!-- Copyright -->
+        <div class=>© 2023 Copyright:
+            <a href="/"> QUAI-ANTIQUE.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+{% endblock %}
+
+
+
+
