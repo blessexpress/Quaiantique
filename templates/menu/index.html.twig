@@ -3,5 +3,91 @@
 {% block title %}Hello MenuController!{% endblock %}
 
 {% block body %}
-<h1>Bonjour</h1>
+
+    <style>
+
+        header {
+            background-color: deepskyblue;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .menu-item {
+            border-bottom: 1px solid black;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            max-width: 180px;
+            max-height: 100px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nos Menus Aquatiques</h1>
+    </header>
+
+    <section>
+        <div class="menu-item">
+            <img src={{ asset("assets/img/accueil.png")}} alt="Entrée 1">
+            <div>
+                <span>Plat 1</span>
+                <br>
+                <span>Prix:50 €</span>
+            </div>
+            <div>
+                <p>menu gjnrhyeneen rgsteb t gr</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src={{ asset("assets/img/accueil.png")}} alt="Plat 1">
+            <div>
+                <span>Plat 2</span>
+                <span>Prix:50 €</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src={{ asset("assets/img/accueil.png")}} alt="Dessert 1">
+            <div>
+                <span>Plat 3</span>
+                <span>Prix:50€</span>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src={{ asset("assets/img/accueil.png")}} alt="Boisson 1">
+            <div>
+                <span>Plat 4</span>
+                <span>Prix:50 €</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
 {% endblock %}

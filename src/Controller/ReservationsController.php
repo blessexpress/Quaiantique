@@ -35,7 +35,7 @@ class ReservationsController extends AbstractController
             $reservation->setNombrePersonnes($nbPersonnes);
             $reservation->setDateReservation($dateReservation);
             $reservation->setHeureReservation($heureReservation);
-            $reservation->addUser($this->getUser());
+            //$reservation->addUser($this->getUser());
             //dd($reservation);
 
 

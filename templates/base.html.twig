@@ -22,31 +22,55 @@
             <img class="logo" src="{{ asset('assets/img/logo QA.png') }}" >
             <div class="collapse navbar-collapse" id="navbarColor03" style="margin-left: 10%" >
                 <ul class="navbar-nav me-auto" style="font-size: 20px">
+
+
                     <li class="nav-item" style="margin-left: 20%">
                         <a class="nav-link active" href="{{path("app_default") }}" >Accueil</a>
                         <span class="visually-hidden">(current)</span>
                     </li>
+
                     <li class="nav-item" style="margin-left: 20%">
                         <a class="nav-link" href="{{path("app_menu") }}">Menu</a>
                     </li>
-                    <li class="nav-item" style="margin-left: 20%">
-                        <a class="nav-link" href="{{path("app_reservations") }}" >Reservations</a>
-                    </li>
+
                     <li class="nav-item" style="margin-left: 20%">
                         <a class="nav-link" href="{{path("app_contact") }}" >Contact</a>
                     </li>
-                    {% if is_granted('ROLE_USER') %}
+
+
+                    {% dump(app.user.roles) %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item" style="margin-left: 20%">
+                            <a class="nav-link" href="{{path("app_contact") }}" >Contact</a>
+                        </li>
+                    {% endif %}
+
+
+
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+                        <li class="nav-item" style="margin-left: 20%">
+                            <a class="nav-link" href="{{path("app_mes_reservations") }}" >Mes Reservations</a>
+                        </li>
+
                         <li class="nav-item" style="margin-left: 20%">
                             <a class="nav-link" href="{{path("app_logout") }}">Deconnexion</a>
                         </li>
+
                     {% else %}
+
                         <li class="nav-item" style="margin-left: 20%">
-                            <a class="nav-link" href="{{path("app_register") }}">Inscription</a>
+                            <a class="nav-link" href="{{path("app_reservations") }}" >Reservations</a>
                         </li>
+
+
                         <li class="nav-item" style="margin-left: 20%">
                             <a class="nav-link" href="{{path("app_login") }}">Connexion</a>
                         </li>
+
                     {% endif %}
+
+
                 </ul>
             </div>
         </div>
